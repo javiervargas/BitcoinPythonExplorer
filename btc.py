@@ -65,7 +65,6 @@ class DaemonBTC:
         return transactions
 
     def get_block_transactions_bulk(self, block):
-        "Return an iterable object for bulk transactions"
 
         transactions = self.get_block_transactions(block)
         tx = Transactions()
@@ -111,7 +110,7 @@ class Transactions:
 
 
     def __next__(self):
-        "handle a call to next()"
+        "next()"
 
         self.current = self.current + 1
         if self.current >= len(self.transactions):
@@ -120,7 +119,7 @@ class Transactions:
         return self.transactions[self.current]
 
     def __iter__(self):
-        "Just return ourself"
+        "ourself"
         return self
 
     def __len__(self):
